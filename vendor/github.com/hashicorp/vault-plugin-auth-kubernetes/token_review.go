@@ -73,7 +73,7 @@ func (t *tokenReviewAPI) Review(jwt string) (*tokenReviewResult, error) {
 	}
 
 	// Build the request to the token review API
-	url := fmt.Sprintf("%s/apis/authentication.k8s.io/v1/tokenreviews", t.config.Host)
+	url := fmt.Sprintf("%s/apis/authentication.k8s.io/v1beta1/tokenreviews", t.config.Host)
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(trJSON))
 	if err != nil {
 		return nil, err
